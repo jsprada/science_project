@@ -9,15 +9,20 @@ Create a Raspberry Pi that will monitor four temperature sensors and log the res
 ### Secondary
 Add a simple dashboard that will allow web-based remote monitoring.
 
-It should be noted that this device/web interface is not intended to be deployed or routed (NAT) with a public facing interface.  Absolutley zero effort has been put into creating this as a secure device.  It could very well be a good place to start developing a platform that others can use on the open Internet in the future.  For now, just keep in mind that if you deploy an unsecured Raspberry Pi on the open internet, it will get pwned in no time flat.  MY efforts on *this* project have been solely to build a quick tool that I can use to complete my project.
+##Methods
+This software system consists of two scripts, and a log file.   One script polls sensors and logs the results to a log file.  The other script scrapes the log file, graphs the results on a chart and serves it up as a web page (Dash/Flask).  I used two cron jobs, one to start the web interface, the other to check sensors once per minute.
+
+
+## Notes
+It should be noted that this device/web interface is not intended to be deployed or routed (NAT) with a public facing interface.  Absolutley zero effort has been put into creating this as a secure device.  It could very well be a good place to start developing a platform that others can use on the open Internet in the future.  For now, just keep in mind that if you deploy an unsecured Raspberry Pi on the open internet, it will get pwned in no time flat, and could be used as a jump-off point into your network.  My efforts on *this* project have been solely to build a quick tool that I can use to complete my project.  
+
+Additionally, I am not a software engineer, and these tools were quickly knocked out for a project.  I did not include robust error checking or automated tests.  If there's interest in the project, and people want to use it for their own purposes, I'd consider building a more robust system. 
 
 ### Assumptions
 
 It's assumed that the end user knows a little about Linux already, or is at least comfortable working in terminal emulators.   
 
 It's also assumed that there are four sensors connected.   If you use more or less, the software will need to be adapted.  If there's enough demand, I'll consider making it auto-detect and adapt as necessary.
-
-It should be noted that these tools were quickly knocked out for a project, and do not include robust error checking or automated tests.
 
 
 ## Requirements
