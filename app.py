@@ -23,9 +23,9 @@ def serve_layout():
 
 
     layout_value = html.Div(children=[
-        html.H1(children='Mpemba Effect Test'),
+        html.H1(children='DS18B20 Sensors'),
 
-        html.Div(children='''Testing Mpemba Effect, by: Johnny Sprada'''),
+        html.Div(children='''Monitor up to 4x temp sensors, By: Johnny Sprada'''),
 
         dcc.Graph(
             id='example-graph',
@@ -50,9 +50,7 @@ def serve_layout():
 
                 ],
                 'layout': {
-                    'title': 'Sensor Temp Over Time',
-                    'xaxis': 'Time (updated each minute)',
-                    'yaxis': 'Temp C (rounded to nearest tenth)'
+                    'title': 'Sensor Temp Over Time'
                 }
             }
         )
