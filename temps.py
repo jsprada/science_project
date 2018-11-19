@@ -39,10 +39,10 @@ def get_temperature(w1_path, temp_string):
 
 def check_for_log_file(log_file):
         if os.path.isfile(log_file):
-            print('Log File already exists')
+            #print('Log File already exists')
             pass
         else:
-            print('Creating Log File')
+            #print('Creating New Temperatures Log File')
             with open(log_file, "a") as f:
                 for col in header:
                     f.write("%s\t" % col)
