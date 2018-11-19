@@ -22,7 +22,7 @@ install_files()
 {
 mkdir /home/pi/sp
 cp temps.py /home/pi/sp/temps.py
-cp app.py /home/pi/sp.py
+cp app.py /home/pi/sp/app.py
 }
 
 setup_cron()
