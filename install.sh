@@ -27,8 +27,8 @@ cp app.py /home/pi/sp/app.py
 
 setup_cron()
 {
-echo "@reboot pi /usr/bin/python /home/pi/sp/app.py" | sudo tee /etc/cron.d/sp_on_reboot
-echo "* * * * * pi /usr/bin/python /home/pi/sp/temps.py" | sudo tee /etc/cron.d/sp_per_minute
+echo "@reboot pi /usr/bin/python /home/pi/sp/app.py >> /dev/null 2>&1" | sudo tee /etc/cron.d/sp_on_reboot
+echo "* * * * * pi /usr/bin/python /home/pi/sp/temps.py >> /dev/null 2>&1" | sudo tee /etc/cron.d/sp_per_minute
 echo "Please reboot now"
 }
 
