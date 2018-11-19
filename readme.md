@@ -32,7 +32,7 @@ It's also assumed that there are four sensors connected.   If you use more or le
 * (1) 4.7k resistor
 * (4) 100 ohm resistors
 * (Optional) Srew terminal break-out board for Raspberry Pi (makes it easy to connect devices)
-* (optional) UPS battery backup (LifePO4weredPi+)
+* (optional) UPS battery backup (LifePO4weredPi+) (Rad piece of hardware with excellent software - https://github.com/xorbit/LiFePO4wered-Pi)
 * Misc: PCB hole board, breakout board, small gage wire, heat shrink, hot glue, etc.
 
 
