@@ -53,7 +53,7 @@ Connect your sensor array to a Raspberry Pi 3.3v pin, ground, and the 1Wire sign
 
 Here's a photo of mine, completed with shrink wrap around the PC board where all the resistors and sensors are connected.   I also hot-glued (hacker's duct tape!) any wires that are soldered to the board to releive stress when bending and handling.  I used sticky backed velcro on both the pi and the circuit board to mount into a very high-tech cardboard box.  The box is indeed high tech because it was used to ship my new TI Nspire CX calculator.  
 
-![Science Project By Johnny Sprada](/images/sp_complete.png)
+![Science Project By Johnny Sprada](/images/sp_complete.jpg)
 
 
 ## Software
