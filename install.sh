@@ -29,6 +29,7 @@ setup_cron()
 {
 echo "@reboot pi /usr/bin/python /home/pi/sp/app.py" | sudo tee /etc/cron.d/sp_on_reboot
 echo "* * * * * pi /usr/bin/python /home/pi/sp/temps.py >> /dev/null 2>&1" | sudo tee /etc/cron.d/sp_per_minute
+echo "0 * * * * pi /usr/bin/rsync /home/pi/sp/temps_log /home/pi/sp/temps_log_backup
 echo "Please reboot now"
 }
 
