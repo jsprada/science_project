@@ -10,7 +10,11 @@ Create a Raspberry Pi that will monitor four temperature sensors and log the res
 Add a simple dashboard that will allow web-based remote monitoring.
 
 ##Methods
-This software system consists of two scripts, and a log file.   One script polls sensors and logs the results to a log file.  The other script scrapes the log file, graphs the results on a chart and serves it up as a web page (Dash/Flask).  I used two cron jobs, one to start the web interface, the other to check sensors once per minute.
+This software system consists of two scripts, and a log file.   One script polls sensors and logs the results to a log file.  The other script scrapes the log file, graphs the results on a chart and serves it up as a web page (Dash/Flask).  I used three cron jobs, one to start the web interface, one to check sensor script each minute, and one that will use `rsync` to make a backup of the log file each hour.
+
+
+#### This system is set up under the assumption that it will be run as user `pi`.
+There are hard-coded links to files that will be created in the pi user directory. If there's enough demand to use this tool, I'd be happy to make it work for use under any user.   
 
 
 ## Notes
