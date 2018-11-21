@@ -4,17 +4,21 @@
 
 ## Objectives
 ### Primary
-Create a Raspberry Pi that will monitor four temperature sensors and log the results at a specified frequency.  MY primary use for this is to test the Mpemba effect for a school science project.
+Create a Raspberry Pi that will monitor four temperature sensors and log the results at a specified frequency.  My primary use for this is to test the Mpemba effect for a school science project.
 
 ### Secondary
 Add a simple dashboard that will allow web-based remote monitoring.
 
-##Methods
-This software system consists of two scripts, and a log file.   One script polls sensors and logs the results to a log file.  The other script scrapes the log file, graphs the results on a chart and serves it up as a web page (Dash/Flask).  I used three cron jobs, one to start the web interface, one to check sensor script each minute, and one that will use `rsync` to make a backup of the log file each hour.
+## Methods
+The hardware required is a sensor network, added to the Raspberry Pi, which is explained later in this document.   
+
+This software system consists of two scripts, a log file, and some cron jobs.   One script polls sensors and logs the results to a log file.  The other script scrapes the log file, graphs the results on a chart and serves it up as a web page (Dash/Flask).  I used three cron jobs, one to start the web interface, one to check sensor script each minute, and one that will use `rsync` to make a backup of the log file each hour.
 
 
 #### This system is set up under the assumption that it will be run as user `pi`.
-There are hard-coded links to files that will be created in the pi user directory. If there's enough demand to use this tool, I'd be happy to make it work for use under any user.   
+There are hard-coded links to files that will be created in the pi user directory. If there's enough demand to use this tool, I'd be happy to make it work for use under any user.
+
+Once installed, all files used in the system, logs, and backups can be found in `/home/pi/sp/`
 
 
 ## Notes
@@ -117,10 +121,12 @@ To keep things simple, I've split the duties of this device into two separate fu
 
 Before that will work, you'll need to install a couple packages for your operating system, and some python libraries that the scripts make use of.  I've created an installation script called `install.sh` that will install the OS packages, Python modules, copy scripts into `/home/pi/sp/`, and add the two cron jobs.     All you have to do is restart the device and it will begin logging.
 
+To install everything, automatically, follow these instructions:
+
     $ sudo apt-get install git
     $ git clone https://github.com/jsprada/science_project/edit/master/readme.md
     $ cd science_project 
-    $ install.sh
+    $ sh install.sh
     
 
  After it's complete, reboot the pi and point a web browser from another computer on the network to the IP address of the Raspberry Pi, on port 8050 similar to this, but using your own IP address: `http://192./168.1.176:8050`
