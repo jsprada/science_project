@@ -117,9 +117,13 @@ To keep things simple, I've split the duties of this device into two separate fu
 
 Before that will work, you'll need to install a couple packages for your operating system, and some python libraries that the scripts make use of.  I've created an installation script called `install.sh` that will install the OS packages, Python modules, copy scripts into `/home/pi/sp/`, and add the two cron jobs.     All you have to do is restart the device and it will begin logging.
 
+    $ sudo apt-get install git
+    $ git clone https://github.com/jsprada/science_project/edit/master/readme.md
+    $ cd science_project 
     $ install.sh
+    
 
-    After it's complete, reboot the pi and point a web browser from another computer on the network to the IP address of the Raspberry Pi, on port 8050 similar to this, but using your own IP address: `http://192./168.1.176:8050`
+ After it's complete, reboot the pi and point a web browser from another computer on the network to the IP address of the Raspberry Pi, on port 8050 similar to this, but using your own IP address: `http://192./168.1.176:8050`
 
 ### Collect temps and write to a Log
 In `/home/pi/sp/temps.py` script called `temps.py` that will look at the 1-wire directory (`/sys/bus/w1/devices`) and read all the directories within it, then traversing each of those directories, and grabbing the temp from each probe.   Then the script will check to see if a log file has been created yet, or not and create it (adding a header row) or append the temps to it once and end.
